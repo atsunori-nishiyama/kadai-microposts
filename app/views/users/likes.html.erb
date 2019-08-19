@@ -1,4 +1,4 @@
-<div class="row">
+<div clsss="row">
     <aside class="col-sm-4">
         <div class="card">
             <div class="card-header">
@@ -7,16 +7,16 @@
                 </h3>
             </div>
             <div class="card-body">
-                <img class="rounded img-fluid" src="<%= gravatar_url(@user, {size: 500 }) %>" aly="">
+                <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
             </div>
         </div>
-        <%= render 'relationships/follow_button' , user: @user %>
+        <%= render 'relationships/follow_button', user: @user %>
     </aside>
     <div class="col-sm-8">
         <ul class="nav nav-tabs nav-justified mb-3">
             <li class="nav-item">
                 <a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">
-                    microposts <span class="badge badge-secondary"><%= @count_microposts %></span></a> 
+                    Microposts <span class="badge badge-secondary"></span></a>
             </li>
             <li class="nav-item">
                 <a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">
@@ -26,11 +26,7 @@
                 <a href="<%= followers_user_path(@user) %>" class="<%= 'active' if current_page?(followers_user_path(@user)) %> ">
                     Followers <span class="badge badge-secondary"><%= @count_followers %></span></a>
             </li>
-            <li class="nav-item">
-                <a href="<%= likes_user_path(@user) %>" class="nav-link<%= 'active' if current_page?(likes_user_path(@user)) %>">
-                My favorite <span class="badge badge-secondary"><%= @count_favposts %></span></a>
-            </li>
         </ul>
-        <%= render 'users', users: @followings %>
+        <%= render 'microposts/microposts', microposts: @favposts %>
     </div>
 </div>
