@@ -1,4 +1,4 @@
-<div clsss="row">
+<div class="row">
     <aside class="col-sm-4">
         <div class="card">
             <div class="card-header">
@@ -11,6 +11,8 @@
             </div>
         </div>
         <%= render 'relationships/follow_button', user: @user %>
+        
+        
     </aside>
     <div class="col-sm-8">
         <ul class="nav nav-tabs nav-justified mb-3">
@@ -23,8 +25,12 @@
                     Followings <span class="badge badge-secondary"><%= @count_followers %></span></a>
             </li>
             <li class="nav-item">
-                <a href="<%= followers_user_path(@user) %>" class="<%= 'active' if current_page?(followers_user_path(@user)) %> ">
+                <a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %> ">
                     Followers <span class="badge badge-secondary"><%= @count_followers %></span></a>
+            </li>
+            <li class="nav-item">
+                <a href="<%= likes_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(likes_user_path(@user)) %>">
+                My favorite <span class="badge badge-secondary"><%= @count_favposts %></span></a>
             </li>
         </ul>
         <%= render 'microposts/microposts', microposts: @favposts %>
