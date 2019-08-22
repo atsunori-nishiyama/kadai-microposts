@@ -60,6 +60,5 @@ group :production do
   gem 'pg', '>= 0.18', '<2.0'  
 end
 
-gem "nokogiri", ">= 1.10.3" , "< 1.10.4"
+gem "nokogiri", ">= 1.10.3"
 
-# gem "nokogiri", ">= 1.10.4"
