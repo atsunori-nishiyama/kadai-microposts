@@ -15,10 +15,10 @@
                 <div class="col-sm3">
                   <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
                 </div>
-                <div class="col-sm-3">
-                    <%= render 'favorites/like_button', micropost: micropost %>
-                </div>
-              <% end %>   
+              <% end %> 
+              <div class="col-sm-3">
+                  <%= render 'favorites/like_button', micropost: micropost %>
+              </div>
             </div>
         </div>
     </li>
